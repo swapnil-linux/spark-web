@@ -62,14 +62,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       type = 'button',
       ...props
     },
-    ref
+    forwardedRef
   ) => {
     const iconOnly = Boolean(props.label);
     const buttonStyleProps = useButtonStyles({
       iconOnly,
+      prominence,
       size,
       tone,
-      prominence,
     });
 
     const isDisabled = disabled || loading;
@@ -93,7 +93,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         as="button"
         id={id}
         onClick={handleClick}
-        ref={ref}
+        ref={forwardedRef}
         type={type}
         {...buttonStyleProps}
         {...(data ? buildDataAttributes(data) : undefined)}
