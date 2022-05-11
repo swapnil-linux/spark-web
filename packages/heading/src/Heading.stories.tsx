@@ -1,19 +1,22 @@
+import type { Story } from '@ladle/react';
 import { Stack } from '@spark-web/stack';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import type { HeadingProps } from './Heading';
 import { Heading } from './Heading';
 
-export default {
+const meta = {
   title: 'Typography / Heading',
   component: Heading,
-} as ComponentMeta<typeof Heading>;
+};
+export default meta;
 
-const HeadingStory: ComponentStory<typeof Heading> = (args: HeadingProps) => (
-  <Stack gap="large">
-    <Heading {...args} />
-  </Stack>
-);
+const HeadingStory: Story<HeadingProps> = args => {
+  return (
+    <Stack gap="large">
+      <Heading {...args} />
+    </Stack>
+  );
+};
 
 export const Default = HeadingStory.bind({});
 

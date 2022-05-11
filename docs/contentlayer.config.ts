@@ -49,9 +49,9 @@ export const Package = defineDocumentType(() => ({
       description: 'The title of the package',
       required: true,
     },
-    storybookPath: {
+    storyPath: {
       type: 'string',
-      description: 'Path for Storybook',
+      description: 'Path for Ladle',
       required: false,
     },
   },

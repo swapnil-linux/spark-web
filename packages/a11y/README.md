@@ -1,6 +1,6 @@
 ---
 title: Accessibility
-storybookPath: accessibility-visuallyhidden--default
+storyPath: accessibility-visuallyhidden--default
 ---
 
 The components in this library have been implemented with accessibility built

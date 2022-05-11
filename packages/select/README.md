@@ -1,6 +1,6 @@
 ---
 title: Select
-storybookPath: forms-select--default
+storyPath: forms-select--default
 ---
 
 Allows the user to make a single selection from a list of values — usually in a

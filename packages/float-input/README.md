@@ -1,6 +1,6 @@
 ---
 title: Float Input
-storybookPath: forms-float-input--default
+storyPath: forms-float-input--default
 ---
 
 Float input provides a way for inputting float values.

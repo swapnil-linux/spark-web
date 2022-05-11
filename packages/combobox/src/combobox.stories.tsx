@@ -1,13 +1,15 @@
+import type { Story } from '@ladle/react';
 import { Field } from '@spark-web/field';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { useState } from 'react';
 
+import type { ComboboxProps } from './combobox';
 import { Combobox } from './combobox';
 
-export default {
+const meta = {
   title: 'Forms / Combobox',
   component: Combobox,
-} as ComponentMeta<typeof Combobox>;
+};
+export default meta;
 
 type Item = { label: string; value: string };
 const items: Item[] = [
@@ -16,7 +18,7 @@ const items: Item[] = [
   { label: 'BMO', value: 'bmo' },
 ];
 
-const ComboboxStory: ComponentStory<typeof Combobox> = () => {
+const ComboboxStory: Story<ComboboxProps> = () => {
   const [value, setValue] = useState<Item | null>(null);
 
   return (

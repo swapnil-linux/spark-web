@@ -1,17 +1,18 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Story } from '@ladle/react';
 
 import { Placeholder } from '../../../docs/components/example-helpers';
 import type { ColumnsProps } from './Columns';
 import { Columns } from './Columns';
 
-export default {
+const meta = {
   title: 'Page & Layout / Columns',
   component: Columns,
-} as ComponentMeta<typeof Columns>;
+};
+export default meta;
 
-const ColumnsStory: ComponentStory<typeof Columns> = (
-  args: Omit<ColumnsProps, 'className'>
-) => <Columns {...args} />;
+const ColumnsStory: Story<ColumnsProps> = args => {
+  return <Columns {...args} />;
+};
 
 export const Default = ColumnsStory.bind({});
 

@@ -1,6 +1,6 @@
 ---
 title: Columns
-storybookPath: page-layout-columns--default
+storyPath: page-layout-columns--default
 ---
 
 Use the columns primitive to layout content in configurable columns.

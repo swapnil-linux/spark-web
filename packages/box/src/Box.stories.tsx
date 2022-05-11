@@ -1,21 +1,22 @@
+import type { Story } from '@ladle/react';
 import { Text } from '@spark-web/text';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import type { BoxProps } from './Box';
 import { Box } from './Box';
 
-export default {
+const meta = {
   title: 'Page & Layout / Box',
   component: Box,
-} as ComponentMeta<typeof Box>;
+};
+export default meta;
 
-const BoxStory: ComponentStory<typeof Box> = (
-  args: Omit<BoxProps, 'className'>
-) => (
-  <Box {...args}>
-    <Text>I'm some text inside a Box</Text>
-  </Box>
-);
+const BoxStory: Story<BoxProps> = args => {
+  return (
+    <Box {...args}>
+      <Text>I'm some text inside a Box</Text>
+    </Box>
+  );
+};
 
 export const Default = BoxStory.bind({});
 

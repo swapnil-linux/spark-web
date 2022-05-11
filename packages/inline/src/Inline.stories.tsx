@@ -1,17 +1,19 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Story } from '@ladle/react';
 
 import { Placeholder } from '../../../docs/components/example-helpers';
 import type { InlineProps } from './Inline';
 import { Inline } from './Inline';
 
-export default {
+const meta = {
   title: 'Page & Layout / Inline',
   component: Inline,
-} as ComponentMeta<typeof Inline>;
+};
+export default meta;
 
-const InlineStory: ComponentStory<typeof Inline> = (
-  args: Omit<InlineProps, 'className'>
-) => <Inline {...args} />;
+const InlineStory: Story<InlineProps> = args => {
+  return <Inline {...args} />;
+};
+
 export const Default = InlineStory.bind({});
 
 Default.args = {

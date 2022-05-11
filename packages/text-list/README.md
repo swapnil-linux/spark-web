@@ -1,6 +1,6 @@
 ---
 title: Text List
-storybookPath: data-display-textlist--default
+storyPath: data-display-textlist--default
 ---
 
 List semantics are handled automatically, including the use of ordered lists

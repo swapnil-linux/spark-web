@@ -1,6 +1,6 @@
 ---
 title: Hidden
-storybookPath: accessibility-hidden--default
+storyPath: accessibility-hidden--default
 ---
 
 Conditionally display content for different screen sizes and media types.

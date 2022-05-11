@@ -1,6 +1,6 @@
 ---
 title: Heading
-storybookPath: typography-heading--default
+storyPath: typography-heading--default
 ---
 
 Constrained, purposeful heading styles as a component.

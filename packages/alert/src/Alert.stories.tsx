@@ -1,16 +1,17 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Story } from '@ladle/react';
 
 import type { AlertProps } from './Alert';
 import { Alert } from './Alert';
 
-export default {
+const meta = {
   title: 'Feedback & Overlays / Alert',
   component: Alert,
-} as ComponentMeta<typeof Alert>;
+};
+export default meta;
 
-const AlertStory: ComponentStory<typeof Alert> = (args: AlertProps) => (
-  <Alert {...args}>Child text</Alert>
-);
+const AlertStory: Story<AlertProps> = args => {
+  return <Alert {...args}>Child text</Alert>;
+};
 
 export const Info = AlertStory.bind({});
 export const Critical = AlertStory.bind({});

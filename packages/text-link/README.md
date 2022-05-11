@@ -1,6 +1,6 @@
 ---
 title: Text Link
-storybookPath: navigation-textlink--default
+storyPath: navigation-textlink--default
 ---
 
 **NOTE:** These components must be nested within a [Text](/package/text) or

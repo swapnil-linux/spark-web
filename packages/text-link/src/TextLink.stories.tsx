@@ -1,22 +1,23 @@
+import type { Story } from '@ladle/react';
 import { Text } from '@spark-web/text';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import type { TextLinkProps } from './TextLink';
 import { TextLink } from './TextLink';
 
-export default {
+const meta = {
   title: 'Navigation / TextLink',
   component: TextLink,
-} as ComponentMeta<typeof TextLink>;
+};
+export default meta;
 
-const TextLinkStory: ComponentStory<typeof TextLink> = (
-  args: TextLinkProps
-) => (
-  <Text>
-    {`Here's some text with a `}
-    <TextLink {...args} />
-  </Text>
-);
+const TextLinkStory: Story<TextLinkProps> = args => {
+  return (
+    <Text>
+      Here's some text with a <TextLink {...args} />
+    </Text>
+  );
+};
+
 export const Default = TextLinkStory.bind({});
 
 Default.args = {

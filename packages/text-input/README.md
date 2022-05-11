@@ -1,6 +1,6 @@
 ---
 title: Text Input
-storybookPath: forms-textinput--default
+storyPath: forms-textinput--default
 ---
 
 Text input provides a way for inputting text. The component must be nested

@@ -1,6 +1,6 @@
 ---
 title: Combobox
-storybookPath: forms-combobox--default
+storyPath: forms-combobox--default
 ---
 
 The `Combobox` allows the user to browse, search, and make a single selection

@@ -1,6 +1,6 @@
 ---
 title: Checkbox
-storybookPath: forms-checkbox--default
+storyPath: forms-checkbox--default
 ---
 
 Checkboxes are used to toggle between checked and unchecked states — usually in

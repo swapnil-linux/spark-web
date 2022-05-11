@@ -1,6 +1,6 @@
 ---
 title: Nav Link
-storybookPath: navigation-navlink--default
+storyPath: navigation-navlink--default
 ---
 
 Nav links are styled links for use in site navigation.

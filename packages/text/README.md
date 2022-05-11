@@ -1,6 +1,6 @@
 ---
 title: Text
-storybookPath: typography-text--default
+storyPath: typography-text--default
 ---
 
 Constrained, purposeful text styles as a component.

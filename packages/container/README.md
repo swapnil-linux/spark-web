@@ -1,6 +1,6 @@
 ---
 title: Container
-storybookPath: page-layout-container--default
+storyPath: page-layout-container--default
 ---
 
 The container centers and constrains the maximum width of the content it wraps.

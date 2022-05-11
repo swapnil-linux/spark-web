@@ -1,6 +1,6 @@
 ---
 title: Stack
-storybookPath: page-layout-stack--default
+storyPath: page-layout-stack--default
 ---
 
 Used to distribute children vertically, with even spacing between each child.

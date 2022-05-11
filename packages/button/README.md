@@ -1,6 +1,6 @@
 ---
 title: Button
-storybookPath: forms-buttons-button--default
+storyPath: forms-buttons-button--default
 ---
 
 Buttons are clickable elements that are used to trigger actions. They

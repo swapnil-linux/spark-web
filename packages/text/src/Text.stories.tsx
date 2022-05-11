@@ -1,18 +1,19 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Story } from '@ladle/react';
 
 import type { TextProps } from './Text';
 import { Text } from './Text';
 
-export default {
+const meta = {
   title: 'Typography / Text',
   component: Text,
-} as ComponentMeta<typeof Text>;
+};
+export default meta;
 
-const LinkStory: ComponentStory<typeof Text> = (args: TextProps) => (
-  <Text {...args} />
-);
+const TextStory: Story<TextProps> = args => {
+  return <Text {...args} />;
+};
 
-export const Default = LinkStory.bind({});
+export const Default = TextStory.bind({});
 
 Default.args = {
   children:

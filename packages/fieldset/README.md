@@ -1,6 +1,6 @@
 ---
 title: Fieldset
-storybookPath: forms-fieldset--default
+storyPath: forms-fieldset--default
 ---
 
 Use the `Fieldset` to group thematically related controls in a form.

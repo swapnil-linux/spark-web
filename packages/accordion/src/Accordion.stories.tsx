@@ -1,17 +1,18 @@
+import type { Story } from '@ladle/react';
 import { Text } from '@spark-web/text';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import type { AccordionProps } from './Accordion';
 import { Accordion, AccordionItem } from './Accordion';
 
-export default {
+const meta = {
   title: 'Data Display / Accordion',
   component: Accordion,
-} as ComponentMeta<typeof Accordion>;
+};
+export default meta;
 
-const AccordionStory: ComponentStory<typeof Accordion> = (
-  args: AccordionProps
-) => <Accordion {...args} />;
+const AccordionStory: Story<AccordionProps> = args => {
+  return <Accordion {...args} />;
+};
 
 export const Single = AccordionStory.bind({});
 export const Multiple = AccordionStory.bind({});

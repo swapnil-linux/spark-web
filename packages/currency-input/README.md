@@ -1,6 +1,6 @@
 ---
 title: Currency Input
-storybookPath: forms-currency-input--default
+storyPath: forms-currency-input--default
 ---
 
 Currency input provides a way for inputting money values. Note that this

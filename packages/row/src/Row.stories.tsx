@@ -1,17 +1,18 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Story } from '@ladle/react';
 
 import { Placeholder } from '../../../docs/components/example-helpers';
 import type { RowProps } from './Row';
 import { Row } from './Row';
 
-export default {
+const meta = {
   title: 'Page & Layout / Row',
   component: Row,
-} as ComponentMeta<typeof Row>;
+};
+export default meta;
 
-const RowStory: ComponentStory<typeof Row> = (
-  args: Omit<RowProps, 'className'>
-) => <Row {...args} />;
+const RowStory: Story<RowProps> = args => {
+  return <Row {...args} />;
+};
 
 export const Default = RowStory.bind({});
 

@@ -1,22 +1,25 @@
+import type { Story } from '@ladle/react';
 import { Inline } from '@spark-web/inline';
 import { Stack } from '@spark-web/stack';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import type { SpinnerProps } from './Spinner';
 import { Spinner } from './Spinner';
 
-export default {
+const meta = {
   title: 'Feedback & Overlays / Spinner',
   component: Spinner,
-} as ComponentMeta<typeof Spinner>;
+};
+export default meta;
 
-const SpinnerStory: ComponentStory<typeof Spinner> = (args: SpinnerProps) => (
-  <Stack align="left" gap="xxlarge">
-    <Inline gap="xxlarge">
-      <Spinner {...args} />
-    </Inline>
-  </Stack>
-);
+const SpinnerStory: Story<SpinnerProps> = args => {
+  return (
+    <Stack align="left" gap="xxlarge">
+      <Inline gap="xxlarge">
+        <Spinner {...args} />
+      </Inline>
+    </Stack>
+  );
+};
 
 export const Default = SpinnerStory.bind({});
 export const Critical = SpinnerStory.bind({});

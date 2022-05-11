@@ -20,7 +20,7 @@ import { GITHUB_URL } from '../../components/constants';
 import { DocsContent } from '../../components/content';
 import { InlineCode } from '../../components/example-helpers';
 import { MDXContent } from '../../components/mdx-components/mdx-content';
-import { StorybookIcon } from '../../components/vectors/fill';
+import { LadleIcon } from '../../components/vectors/stroke';
 import type { HeadingData } from '../../utils/generate-toc';
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -34,7 +34,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<{
   code: string;
   packageName: string;
-  storybookPath: string | null;
+  storyPath: string | null;
   title: string;
   toc: HeadingData[];
 }> = async ({ params }) => {
@@ -49,7 +49,7 @@ export const getStaticProps: GetStaticProps<{
     props: {
       code: pkg.body.code,
       packageName: pkg.packageName,
-      storybookPath: pkg.storybookPath ?? null,
+      storyPath: pkg.storyPath ?? null,
       title: pkg.title,
       toc: pkg.toc,
     },
@@ -59,7 +59,7 @@ export const getStaticProps: GetStaticProps<{
 export default function Packages({
   code,
   packageName,
-  storybookPath,
+  storyPath,
   title,
   toc,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
@@ -69,7 +69,7 @@ export default function Packages({
     <DocsContent pageTitle={title} includeNavigation toc={toc}>
       <Stack gap="xlarge">
         <Heading level="1">{title}</Heading>
-        <OpenInLinks packageSlug={packageSlug} storybookPath={storybookPath} />
+        <OpenInLinks packageSlug={packageSlug} storyPath={storyPath} />
         <InstallationInstructions
           packageName={packageName}
           packageSlug={packageSlug}
@@ -82,15 +82,15 @@ export default function Packages({
 }
 
 function OpenInLinks({
-  storybookPath,
+  storyPath,
   packageSlug,
 }: {
-  storybookPath: string | null;
+  storyPath: string | null;
   packageSlug: string;
 }) {
   return (
     <Inline gap="large">
-      <StorybookLink storybookPath={storybookPath} />
+      <LadleLink storyPath={storyPath} />
       <EditThisPageLink packageSlug={packageSlug} />
     </Inline>
   );
@@ -113,14 +113,14 @@ function ButtonLinkWithIcon({
   );
 }
 
-function StorybookLink({ storybookPath }: { storybookPath: string | null }) {
-  if (!storybookPath) return null;
+function LadleLink({ storyPath: storyPath }: { storyPath: string | null }) {
+  if (!storyPath) return null;
 
   return (
     <ButtonLinkWithIcon
-      href={`${process.env.NEXT_PUBLIC_STORYBOOK_URL}?path=/story/${storybookPath}`}
-      label="Open in Storybook"
-      icon={StorybookIcon}
+      href={`${process.env.NEXT_PUBLIC_LADLE_URL}?path=/story/${storyPath}`}
+      label="Open in Ladle"
+      icon={LadleIcon}
     />
   );
 }

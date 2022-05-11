@@ -1,6 +1,6 @@
 ---
 title: Inline
-storybookPath: page-layout-inline--default
+storyPath: page-layout-inline--default
 ---
 
 Use to layout a group of elements together, and allow them to wrap onto multiple

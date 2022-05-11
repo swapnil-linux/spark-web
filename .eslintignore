@@ -42,7 +42,6 @@ dist
 # Docs
 docs/cache
 docs/public/playroom
-docs/public/storybook
 
 # Test coverage
 coverage

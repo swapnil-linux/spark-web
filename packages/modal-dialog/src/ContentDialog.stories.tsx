@@ -1,15 +1,17 @@
+import type { Story } from '@ladle/react';
 import { Button } from '@spark-web/button';
 import { Text } from '@spark-web/text';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
+import type { ContentDialogProps } from './content-dialog';
 import { ContentDialog } from './content-dialog';
 
-export default {
+const meta = {
   title: 'Feedback & Overlays / Content Dialog',
   component: ContentDialog,
-} as ComponentMeta<typeof ContentDialog>;
+};
+export default meta;
 
-const ContentDialogStory: ComponentStory<typeof ContentDialog> = () => (
+const ContentDialogStory: Story<ContentDialogProps> = () => (
   <ContentDialog
     title="Here's a title"
     description="Content dialog"
@@ -23,6 +25,7 @@ const ContentDialogStory: ComponentStory<typeof ContentDialog> = () => (
     </Text>
   </ContentDialog>
 );
+
 export const Default = ContentDialogStory.bind({});
 
 Default.args = {};

@@ -1,6 +1,6 @@
 ---
 title: Box
-storybookPath: page-layout-box--default
+storyPath: page-layout-box--default
 ---
 
 Box is the lowest-level component for binding theme-based styles to an

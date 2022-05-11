@@ -1,16 +1,18 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Story } from '@ladle/react';
 
 import type { DividerProps } from './Divider';
 import { Divider } from './Divider';
 
-export default {
+const meta = {
   title: 'Page & Layout / Divider',
   component: Divider,
-} as ComponentMeta<typeof Divider>;
+};
+export default meta;
 
-const DividerStory: ComponentStory<typeof Divider> = (args: DividerProps) => (
-  <Divider {...args} />
-);
+const DividerStory: Story<DividerProps> = args => {
+  return <Divider {...args} />;
+};
+
 export const Default = DividerStory.bind({});
 
 Default.args = {

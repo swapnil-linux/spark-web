@@ -1,6 +1,6 @@
 ---
 title: Link
-storybookPath: navigation-link--default
+storyPath: navigation-link--default
 ---
 
 Link is used for taking users to destinations, or moving from one page to

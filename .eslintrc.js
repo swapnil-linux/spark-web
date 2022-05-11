@@ -17,7 +17,12 @@ module.exports = {
     jest: true,
     node: true,
   },
-  extends: ['next', 'plugin:jest/recommended', 'prettier'],
+  extends: [
+    'next',
+    'plugin:jest/recommended',
+    'prettier',
+    'plugin:storybook/recommended',
+  ],
   plugins: [
     '@preconstruct/format-js-tag',
     '@typescript-eslint',
@@ -144,7 +149,7 @@ module.exports = {
       ],
       rules: {
         // Allow importing from packages that aren't listed in package.json for
-        // test and Storybook files
+        // test and story files
         // TypeScript will still catch uninstalled imports for us as there will
         // be no modules or type definitions for them
         'import/no-extraneous-dependencies': OFF,

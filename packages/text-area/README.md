@@ -1,6 +1,6 @@
 ---
 title: Text Area
-storybookPath: forms-textarea--default
+storyPath: forms-textarea--default
 ---
 
 Allows the user to input plain text spanning multiple lines.

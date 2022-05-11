@@ -1,6 +1,6 @@
 ---
 title: Spinner
-storybookPath: feedback-overlays-spinner-—default
+storyPath: feedback-overlays-spinner-—default
 ---
 
 Spinner indicates users that their request is in progress

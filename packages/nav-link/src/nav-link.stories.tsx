@@ -1,17 +1,19 @@
+import type { Story } from '@ladle/react';
 import { HomeIcon } from '@spark-web/icon';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import type { NavLinkProps } from './index';
 import { NavLink } from './index';
 
-export default {
+const meta = {
   title: 'Navigation / NavLink',
   component: NavLink,
-} as ComponentMeta<typeof NavLink>;
+};
+export default meta;
 
-const LinkStory: ComponentStory<typeof NavLink> = (args: NavLinkProps) => (
-  <NavLink {...args} />
-);
+const LinkStory: Story<NavLinkProps> = args => {
+  return <NavLink {...args} />;
+};
+
 export const Default = LinkStory.bind({});
 
 Default.args = {

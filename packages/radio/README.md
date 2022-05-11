@@ -1,6 +1,6 @@
 ---
 title: Radio
-storybookPath: forms-radio--default
+storyPath: forms-radio--default
 ---
 
 Radios are used select a single value from several options — ususally in a form.

@@ -1,6 +1,6 @@
 ---
 title: Modal Dialog
-storybookPath: feedback-overlays-content-dialog--default
+storyPath: feedback-overlays-content-dialog--default
 ---
 
 ## Content Dialog

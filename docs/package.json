@@ -4,15 +4,15 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "./scripts/generate-components-index.js && INIT_CWD=$PWD next build && yarn playroom:build && yarn storybook:build ",
+    "build": "./scripts/generate-components-index.js && INIT_CWD=$PWD next build && yarn playroom:build && yarn ladle:build",
     "contentlayer:build": "INIT_CWD=$PWD yarn contentlayer build",
     "dev": "./scripts/generate-components-index.js && INIT_CWD=$PWD next dev",
+    "ladle:build": "ladle build",
+    "ladle:serve": "ladle serve",
     "lint": "next lint",
     "playroom:build": "./scripts/generate-components-index.js && playroom build",
     "playroom:start": "playroom start",
     "start": "next start",
-    "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook -o ./public/storybook",
     "typecheck": "./scripts/generate-components-index.js && yarn contentlayer:build && tsc --noEmit"
   },
   "dependencies": {
@@ -65,6 +65,7 @@
     "react-simple-code-editor": "^0.11.0"
   },
   "devDependencies": {
+    "@ladle/react": "^0.15.0",
     "@preconstruct/next": "^3.0.0",
     "@storybook/addon-a11y": "^6.4.21",
     "@storybook/addon-actions": "^6.4.21",

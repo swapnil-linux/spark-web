@@ -1,6 +1,6 @@
 ---
 title: Alert
-storybookPath: feedback-overlays-alert--info
+storyPath: feedback-overlays-alert--info
 ---
 
 Alert displays a short and concise message to draw a users' attention without

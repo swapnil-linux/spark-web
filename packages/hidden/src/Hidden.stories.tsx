@@ -1,31 +1,35 @@
+import type { Story } from '@ladle/react';
 import { Divider } from '@spark-web/divider';
 import { InformationCircleIcon } from '@spark-web/icon';
 import { Inline } from '@spark-web/inline';
 import { Stack } from '@spark-web/stack';
 import { Text } from '@spark-web/text';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Placeholder } from '../../../docs/components/example-helpers';
 import type { HiddenProps } from './Hidden';
 import { Hidden } from './Hidden';
 
-export default {
+const meta = {
   title: 'Accessibility / Hidden',
   component: Hidden,
-} as ComponentMeta<typeof Hidden>;
+};
+export default meta;
 
-const HiddenStory: ComponentStory<typeof Hidden> = (args: HiddenProps) => (
-  <Stack gap="large">
-    <Inline gap="xsmall" alignY="center">
-      <InformationCircleIcon tone="info" size="xsmall" />{' '}
-      <Text weight="semibold" tone="info" baseline={false}>
-        Resize this window to see elements hide / show
-      </Text>
-    </Inline>
-    <Divider />
-    <Hidden {...args} />
-  </Stack>
-);
+const HiddenStory: Story<HiddenProps> = args => {
+  return (
+    <Stack gap="large">
+      <Inline gap="xsmall" alignY="center">
+        <InformationCircleIcon tone="info" size="xsmall" />{' '}
+        <Text weight="semibold" tone="info" baseline={false}>
+          Resize this window to see elements hide / show
+        </Text>
+      </Inline>
+      <Divider />
+      <Hidden {...args} />
+    </Stack>
+  );
+};
+
 export const Default = HiddenStory.bind({});
 
 Default.args = {

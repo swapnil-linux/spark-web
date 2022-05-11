@@ -42,7 +42,7 @@ dist
 # Docs
 docs/cache
 docs/public/playroom
-docs/public/storybook
+docs/public/ladle
 
 # Test coverage
 coverage

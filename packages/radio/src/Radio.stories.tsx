@@ -1,18 +1,20 @@
+import type { Story } from '@ladle/react';
 import { Field } from '@spark-web/field';
 import { InformationCircleIcon } from '@spark-web/icon';
 import { Inline } from '@spark-web/inline';
 import { Stack } from '@spark-web/stack';
 import { Text } from '@spark-web/text';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Radio } from './radio';
+import type { RadioProps } from './types';
 
-export default {
+const meta = {
   title: 'Forms / Radio',
   component: Radio,
-} as ComponentMeta<typeof Radio>;
+};
+export default meta;
 
-const RadioStory: ComponentStory<typeof Radio> = () => (
+const RadioStory: Story<RadioProps> = () => (
   <Stack gap="large">
     <Inline gap="xsmall" alignY="center">
       <InformationCircleIcon tone="info" size="xsmall" />
@@ -33,4 +35,5 @@ const RadioStory: ComponentStory<typeof Radio> = () => (
     </Field>
   </Stack>
 );
+
 export const Default = RadioStory.bind({});

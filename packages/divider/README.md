@@ -1,6 +1,6 @@
 ---
 title: Divider
-storybookPath: page-layout-divider--default
+storyPath: page-layout-divider--default
 ---
 
 Used to separate and group content. In most cases use the

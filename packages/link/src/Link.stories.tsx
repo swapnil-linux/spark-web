@@ -1,20 +1,24 @@
+import type { Story } from '@ladle/react';
 import { Inline } from '@spark-web/inline';
 import { Text } from '@spark-web/text';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import type { LinkProps } from './Link';
 import { Link } from './Link';
 
-export default {
+const meta = {
   title: 'Navigation / Link',
   component: Link,
-} as ComponentMeta<typeof Link>;
+};
+export default meta;
 
-const LinkStory: ComponentStory<typeof Link> = (args: LinkProps) => (
-  <Inline>
-    <Link {...args} />
-  </Inline>
-);
+const LinkStory: Story<LinkProps> = args => {
+  return (
+    <Inline>
+      <Link {...args} />
+    </Inline>
+  );
+};
+
 export const Default = LinkStory.bind({});
 
 Default.args = {
