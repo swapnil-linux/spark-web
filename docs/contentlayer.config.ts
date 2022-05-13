@@ -4,7 +4,10 @@ import { readFile } from 'node:fs/promises';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
+import { generatePropsDocument } from './utils/generate-props-document';
 import { generateToc } from './utils/generate-toc';
+
+// const ignoreDirs = ['core', 'theme', 'analytics', 'ssr', 'next-utils'];
 
 export const Home = defineDocumentType(() => ({
   name: 'Home',
@@ -70,6 +73,23 @@ export const Package = defineDocumentType(() => ({
     toc: {
       type: 'json',
       resolve: async doc => generateToc(doc.body.raw),
+    },
+    props: {
+      type: 'json',
+      resolve: async pkg => {
+        // const isComponent = !ignoreDirs.includes(
+        //   pkg._raw.sourceFileDir.replace('packages/', '')
+        // );
+        // const componentSrc = `../${pkg._raw.sourceFileDir.replace(
+        //   '/README.md',
+        //   ''
+        // )}/src/${pkg.title.replace(' ', '-')}.tsx`;
+        // console.log({ componentSrc }, 'ssss');
+        console.log('SLUG', pkg._raw.sourceFileDir);
+        return pkg._raw.sourceFileDir === 'packages/divider'
+          ? generatePropsDocument('')
+          : {};
+      },
     },
   },
 }));
