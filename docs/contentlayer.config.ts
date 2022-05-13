@@ -7,6 +7,7 @@ import remarkGfm from 'remark-gfm';
 import remarkMdx from 'remark-mdx';
 import remarkStripMarkdown from 'strip-markdown';
 
+import { generatePropsDocument } from './utils/generate-props-document';
 import { generateToc } from './utils/generate-toc';
 
 async function mdxToStr(mdx: string): Promise<string> {
@@ -18,6 +19,7 @@ async function mdxToStr(mdx: string): Promise<string> {
     .process(mdx);
   return String(file);
 }
+// const ignoreDirs = ['core', 'theme', 'analytics', 'ssr', 'next-utils'];
 
 export const Home = defineDocumentType(() => ({
   name: 'Home',
@@ -88,6 +90,23 @@ export const Package = defineDocumentType(() => ({
       type: 'string',
       resolve: async doc => {
         return mdxToStr(doc.body.raw);
+      },
+    },
+    props: {
+      type: 'json',
+      resolve: async pkg => {
+        // const isComponent = !ignoreDirs.includes(
+        //   pkg._raw.sourceFileDir.replace('packages/', '')
+        // );
+        // const componentSrc = `../${pkg._raw.sourceFileDir.replace(
+        //   '/README.md',
+        //   ''
+        // )}/src/${pkg.title.replace(' ', '-')}.tsx`;
+        // console.log({ componentSrc }, 'ssss');
+        console.log('SLUG', pkg._raw.sourceFileDir);
+        return pkg._raw.sourceFileDir === 'packages/divider'
+          ? generatePropsDocument('')
+          : {};
       },
     },
   },
