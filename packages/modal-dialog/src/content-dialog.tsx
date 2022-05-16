@@ -36,7 +36,7 @@ const DialogOverlay = forwardRef<HTMLDivElement, DialogOverlayProps>(
   (props, forwardedRef) => {
     const theme = useTheme();
     return (
-      <DialogPrimitive.Overlay {...props} asChild>
+      <DialogPrimitive.Overlay asChild>
         <Box
           ref={forwardedRef}
           background="backdrop"
