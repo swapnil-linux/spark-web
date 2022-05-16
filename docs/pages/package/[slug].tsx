@@ -34,6 +34,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<{
   code: string;
   packageName: string;
+  packageVersion: string;
   storybookPath: string | null;
   title: string;
   toc: HeadingData[];
@@ -49,6 +50,7 @@ export const getStaticProps: GetStaticProps<{
     props: {
       code: pkg.body.code,
       packageName: pkg.packageName,
+      packageVersion: pkg.version,
       storybookPath: pkg.storybookPath ?? null,
       title: pkg.title,
       toc: pkg.toc,
@@ -59,6 +61,7 @@ export const getStaticProps: GetStaticProps<{
 export default function Packages({
   code,
   packageName,
+  packageVersion,
   storybookPath,
   title,
   toc,
@@ -68,7 +71,9 @@ export default function Packages({
   return (
     <DocsContent pageTitle={title} includeNavigation toc={toc}>
       <Stack gap="xlarge">
-        <Heading level="1">{title}</Heading>
+        <Heading level="1">
+          {title} - v{packageVersion}
+        </Heading>
         <OpenInLinks packageSlug={packageSlug} storybookPath={storybookPath} />
         <InstallationInstructions
           packageName={packageName}
