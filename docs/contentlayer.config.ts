@@ -53,6 +53,16 @@ export const Package = defineDocumentType(() => ({
         ).name;
       },
     },
+    componentMaturityStatus: {
+      type: 'string',
+      resolve: async pkg => {
+        return JSON.parse(
+          (
+            await readFile(`../${pkg._raw.sourceFileDir}/package.json`)
+          ).toString()
+        ).componentMaturityStatus;
+      },
+    },
     slug: {
       type: 'string',
       resolve: pkg => pkg._raw.sourceFileDir.replace(/^packages\//, ''),

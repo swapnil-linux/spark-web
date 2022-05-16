@@ -36,6 +36,7 @@ export const getStaticProps: GetStaticProps<{
   packageName: string;
   packageVersion: string;
   storybookPath: string | null;
+  componentMaturityStatus: string;
   title: string;
   toc: HeadingData[];
 }> = async ({ params }) => {
@@ -51,6 +52,7 @@ export const getStaticProps: GetStaticProps<{
       code: pkg.body.code,
       packageName: pkg.packageName,
       packageVersion: pkg.version,
+      componentMaturityStatus: pkg.componentMaturityStatus,
       storybookPath: pkg.storybookPath ?? null,
       title: pkg.title,
       toc: pkg.toc,
@@ -62,6 +64,7 @@ export default function Packages({
   code,
   packageName,
   packageVersion,
+  componentMaturityStatus,
   storybookPath,
   title,
   toc,
@@ -74,6 +77,8 @@ export default function Packages({
         <Heading level="1">
           {title} - v{packageVersion}
         </Heading>
+        <ComponentMaturity componentMaturityStatus={componentMaturityStatus} />
+        <Heading level="2" />
         <OpenInLinks packageSlug={packageSlug} storybookPath={storybookPath} />
         <InstallationInstructions
           packageName={packageName}
@@ -84,6 +89,14 @@ export default function Packages({
       </Stack>
     </DocsContent>
   );
+}
+
+function ComponentMaturity({
+  componentMaturityStatus,
+}: {
+  componentMaturityStatus: string;
+}) {
+  return <div>{componentMaturityStatus}</div>;
 }
 
 function OpenInLinks({
