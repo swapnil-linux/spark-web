@@ -194,7 +194,7 @@ export const FieldMessage = ({ message, id, tone }: FieldMessageProps) => {
   );
 };
 
-function IndicatorContainer({ children, ...props }: { children: ReactNode }) {
+function IndicatorContainer({ children }: { children: ReactNode }) {
   const { typography, utils } = useTheme();
   const { mobile, tablet } = typography.text.small;
   const responsiveStyles = utils.responsiveStyles({
@@ -210,7 +210,6 @@ function IndicatorContainer({ children, ...props }: { children: ReactNode }) {
       cursor="default"
       flexShrink={0}
       className={css(responsiveStyles)}
-      {...props}
     >
       {children}
     </Box>
