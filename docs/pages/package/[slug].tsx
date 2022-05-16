@@ -1,3 +1,4 @@
+import { Alert } from '@spark-web/alert';
 import { ButtonLink } from '@spark-web/button';
 import { Divider } from '@spark-web/divider';
 import { Heading } from '@spark-web/heading';
@@ -96,7 +97,19 @@ function ComponentMaturity({
 }: {
   componentMaturityStatus: string;
 }) {
-  return <div>{componentMaturityStatus}</div>;
+  return (
+    <Alert
+      tone={componentMaturityStatus === 'Experimental' ? 'caution' : 'info'}
+      heading={
+        componentMaturityStatus === 'Experimental'
+          ? 'Experimental'
+          : 'Early Adoption'
+      }
+    >
+      This component is considered {componentMaturityStatus}. See http://blah
+      for more information about what this means.
+    </Alert>
+  );
 }
 
 function OpenInLinks({
