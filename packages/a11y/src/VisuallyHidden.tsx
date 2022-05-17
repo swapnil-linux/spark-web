@@ -11,8 +11,8 @@ export type VisuallyHiddenProps = {
  * @see https://a11yproject.com/posts/how-to-hide-content/
  */
 export const VisuallyHidden = forwardRefWithAs<'span', VisuallyHiddenProps>(
-  ({ as: Tag = 'span' }, ref) => {
-    return <Tag ref={ref} className={css(visuallyHiddenStyles)} />;
+  ({ as: Tag = 'span', ...props }, ref) => {
+    return <Tag ref={ref} className={css(visuallyHiddenStyles)} {...props} />;
   }
 );
 
