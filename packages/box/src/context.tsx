@@ -17,18 +17,21 @@ export const useBackground = () => useContext(backgroundContext);
 
 // conditional provider
 
-export function renderBackgroundProvider(
-  background: BackgroundVariant | undefined,
-  element: ReactElement | null
-) {
+export const BackgroundWrapper = ({
+  background,
+  children,
+}: {
+  background: BackgroundVariant | undefined;
+  children: ReactElement;
+}) => {
   return background ? (
     <InternalBackgroundProvider value={background}>
-      {element}
+      {children}
     </InternalBackgroundProvider>
   ) : (
-    element
+    children
   );
-}
+};
 
 // a11y contrast utility
 

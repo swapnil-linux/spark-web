@@ -5,9 +5,9 @@ import {
   resetElementStyles,
 } from '@spark-web/utils/internal';
 import { forwardRefWithAs } from '@spark-web/utils/ts';
-import type { ReactNode } from 'react';
+import type { ElementType, ReactNode, Ref } from 'react';
 
-import { renderBackgroundProvider } from './context';
+import { BackgroundWrapper } from './context';
 import { useBoxProps } from './useBoxProps';
 import type { BoxStyleProps } from './useBoxStyles';
 
@@ -34,22 +34,29 @@ export type BoxProps = {
 /** Exposes a prop-based API for adding styles to a view, within the constraints of the theme. */
 export const Box = forwardRefWithAs<'div', BoxProps>(
   (
-    { as: Tag = 'div', asElement, className, data, id, ...props },
-    forwardedRef
+    {
+      as: Tag = 'div',
+      asElement,
+      className,
+      data,
+      id,
+      ...props
+    }: BoxProps & { as?: ElementType },
+    forwardedRef: Ref<any>
   ) => {
     const { styles, attributes } = useBoxProps(props);
     const resetStyles = resetElementStyles(asElement ?? Tag);
 
-    const element = (
-      <Tag
-        {...(data ? buildDataAttributes(data) : undefined)}
-        ref={forwardedRef}
-        id={id}
-        className={cx(css(resetStyles), css(styles), className)}
-        {...attributes}
-      />
+    return (
+      <BackgroundWrapper background={props.background}>
+        <Tag
+          {...(data ? buildDataAttributes(data) : undefined)}
+          ref={forwardedRef}
+          id={id}
+          className={cx(css(resetStyles), css(styles), className)}
+          {...attributes}
+        />
+      </BackgroundWrapper>
     );
-
-    return renderBackgroundProvider(props.background, element);
   }
 );
