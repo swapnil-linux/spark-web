@@ -43,7 +43,14 @@ export type ColumnsProps = {
 
 export const Columns = forwardRefWithAs<'div', ColumnsProps>(
   (
-    { alignY = 'top', collapseBelow, data, gap, template, ...props },
+    {
+      alignY = 'top',
+      collapseBelow,
+      data,
+      gap,
+      template,
+      ...props
+    }: ColumnsProps,
     forwardedRef
   ) => {
     const { spacing, utils } = useTheme();
