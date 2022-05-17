@@ -46,7 +46,6 @@ export const Columns = forwardRefWithAs<'div', ColumnsProps>(
     { alignY = 'top', collapseBelow, data, gap, template, children },
     forwardedRef
   ) => {
-    console.log(children);
     const { spacing, utils } = useTheme();
     const alignItems = alignYToAlignItems(alignY);
     const count = Children.count(children);
