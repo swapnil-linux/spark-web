@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 
-import { renderBackgroundProvider } from './context';
+import { BackgroundWrapper } from './context';
 
 export type BackgroundProviderProps = {
   type: 'light' | 'dark';
@@ -12,8 +12,11 @@ export const BackgroundProvider = ({
   type,
   children,
 }: BackgroundProviderProps) => {
-  return renderBackgroundProvider(
-    type === 'dark' ? 'UNKNOWN_DARK' : 'UNKNOWN_LIGHT',
-    children
+  return (
+    <BackgroundWrapper
+      background={type === 'dark' ? 'UNKNOWN_DARK' : 'UNKNOWN_LIGHT'}
+    >
+      {children}
+    </BackgroundWrapper>
   );
 };
