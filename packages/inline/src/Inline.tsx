@@ -19,7 +19,10 @@ export type InlineProps = {
 } & ValidBoxProps;
 
 export const Inline = forwardRefWithAs<'div', InlineProps>(
-  ({ align = 'left', alignY = 'top', ...boxProps }, forwardedRef) => {
+  (
+    { align = 'left', alignY = 'top', ...boxProps }: InlineProps,
+    forwardedRef
+  ) => {
     const justifyContent = alignToJustifyContent(align);
     const alignItems = alignYToAlignItems(alignY);
 

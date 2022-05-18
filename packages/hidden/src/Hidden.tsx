@@ -7,7 +7,7 @@ import { useTheme } from '@spark-web/theme';
 import type { DataAttributeMap } from '@spark-web/utils/internal';
 import { buildDataAttributes } from '@spark-web/utils/internal';
 import { forwardRefWithAs } from '@spark-web/utils/ts';
-import type { ReactNode } from 'react';
+import type { ElementType, ReactNode } from 'react';
 
 export type HiddenProps = {
   children: ReactNode;
@@ -18,7 +18,18 @@ export type HiddenProps = {
 
 /** Conditionally display content for different screen sizes. */
 export const Hidden = forwardRefWithAs<'div', HiddenProps>(
-  ({ above, as, below, children, data, inline: inlineProp, on }, ref) => {
+  (
+    {
+      above,
+      as,
+      below,
+      children,
+      data,
+      inline: inlineProp,
+      on,
+    }: HiddenProps & { as?: ElementType },
+    ref
+  ) => {
     const { utils } = useTheme();
     const [hiddenOnMobile, hiddenOnTablet, hiddenOnDesktop, hiddenOnWide] =
       utils.responsiveRange({ above, below });
