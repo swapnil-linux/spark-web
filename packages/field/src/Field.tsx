@@ -89,11 +89,7 @@ export const Field = forwardRef<HTMLDivElement, FieldProps>(
       hidden: hiddenLabel,
       visible: (
         <Box as="label" htmlFor={inputId}>
-          <Text
-            inline
-            tone={disabled ? 'disabled' : 'neutral'}
-            weight="semibold"
-          >
+          <Text tone={disabled ? 'disabled' : 'neutral'} weight="semibold">
             {label}{' '}
             {secondaryLabel && (
               <Text inline tone={disabled ? 'disabled' : 'muted'}>
@@ -116,7 +112,7 @@ export const Field = forwardRef<HTMLDivElement, FieldProps>(
     return (
       <FieldContextProvider value={fieldContext}>
         <Stack
-          gap={labelVisibility === 'hidden' ? undefined : 'small'}
+          gap={labelVisibility === 'hidden' ? undefined : 'medium'}
           ref={forwardedRef}
           {...(data ? buildDataAttributes(data) : null)}
         >
@@ -136,11 +132,11 @@ export const Field = forwardRef<HTMLDivElement, FieldProps>(
             </Text>
           )}
 
-          {children}
-
           {message && (
             <FieldMessage tone={tone} id={messageId} message={message} />
           )}
+
+          {children}
         </Stack>
       </FieldContextProvider>
     );
