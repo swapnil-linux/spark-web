@@ -3,7 +3,7 @@ import type { BoxProps } from '@spark-web/box';
 import { Box } from '@spark-web/box';
 import type { DataAttributeMap } from '@spark-web/utils/internal';
 import { forwardRefWithAs } from '@spark-web/utils/ts';
-import type { CSSProperties, ReactNode } from 'react';
+import type { CSSProperties, ElementType, ReactNode } from 'react';
 import { useMemo } from 'react';
 
 import { TextContext, useTextContext } from './context';
@@ -59,7 +59,7 @@ export const Text = forwardRefWithAs<'div', TextProps>(
       tone: toneProp,
       transform,
       weight: weightProp,
-    },
+    }: TextProps & { as?: ElementType },
     forwardedRef
   ) => {
     const overflowStyles = useOverflowStrategy(overflowStrategy);

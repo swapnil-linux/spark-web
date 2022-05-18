@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 import { forwardRefWithAs } from '@spark-web/utils/ts';
-import type { ReactNode } from 'react';
+import type { ElementType, ReactNode } from 'react';
 
 export type VisuallyHiddenProps = {
   children?: ReactNode;
@@ -11,7 +11,10 @@ export type VisuallyHiddenProps = {
  * @see https://a11yproject.com/posts/how-to-hide-content/
  */
 export const VisuallyHidden = forwardRefWithAs<'span', VisuallyHiddenProps>(
-  ({ as: Tag = 'span', ...props }, ref) => {
+  (
+    { as: Tag = 'span', ...props }: VisuallyHiddenProps & { as?: ElementType },
+    ref
+  ) => {
     return <Tag ref={ref} className={css(visuallyHiddenStyles)} {...props} />;
   }
 );

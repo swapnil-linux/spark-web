@@ -15,7 +15,7 @@ export type ContainerProps = {
 
 /** Provides a container that centers and constrains the maximum width of the content it wraps. */
 export const Container = forwardRefWithAs<'div', ContainerProps>(
-  ({ children, data, size = 'medium' }, ref) => {
+  ({ children, data, size = 'medium' }: ContainerProps, ref) => {
     const { contentWidth } = useTheme();
     const maxWidth = contentWidth[size];
 

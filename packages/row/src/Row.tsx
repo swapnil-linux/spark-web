@@ -28,7 +28,14 @@ export type RowProps = {
 
 export const Row = forwardRefWithAs<'div', RowProps>(
   (
-    { align = 'left', alignY = 'stretch', children, data, dividers, ...props },
+    {
+      align = 'left',
+      alignY = 'stretch',
+      children,
+      data,
+      dividers,
+      ...props
+    }: RowProps,
     forwardedRef
   ) => {
     const justifyContent = alignToJustifyContent(align);

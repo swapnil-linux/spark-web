@@ -21,7 +21,7 @@ export const ButtonLink = forwardRefWithAs<'a', ButtonLinkProps>(
       size = 'medium',
       tone = 'primary',
       ...props
-    },
+    }: ButtonLinkProps,
     ref
   ) => {
     const LinkComponent = useLinkComponent(ref);
