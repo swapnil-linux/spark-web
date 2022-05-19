@@ -6,10 +6,8 @@ import { useLinkComponent } from './linkContext';
 
 export type LinkProps = LinkComponentProps;
 
-export const Link = forwardRefWithAs<'a', LinkProps>(({ href, data }, ref) => {
+export const Link = forwardRefWithAs<'a', LinkProps>((props, ref) => {
   const LinkComponent = useLinkComponent(ref);
 
-  return (
-    <Box as={LinkComponent} asElement="a" ref={ref} href={href} data={data} />
-  );
+  return <Box as={LinkComponent} asElement="a" ref={ref} {...props} />;
 });

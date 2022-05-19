@@ -1,5 +1,4 @@
 ---
-'@spark-web/a11y': major
 '@spark-web/columns': major
 '@spark-web/combobox': major
 '@spark-web/currency-input': major
