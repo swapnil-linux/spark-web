@@ -1,6 +1,6 @@
 import { cleanup, render } from '@testing-library/react';
 
-import { Fieldset } from './fieldset';
+import { Fieldset } from './Fieldset';
 
 describe('Fieldset component', () => {
   afterEach(cleanup);

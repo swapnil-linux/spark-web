@@ -1,4 +1,4 @@
-export { Checkbox } from './checkbox';
+export { Checkbox } from './Checkbox';
 export { CheckboxPrimitive } from './checkbox-primitive';
 
 // types

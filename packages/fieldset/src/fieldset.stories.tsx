@@ -4,7 +4,7 @@ import { Stack } from '@spark-web/stack';
 import { TextInput } from '@spark-web/text-input';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Fieldset } from './fieldset';
+import { Fieldset } from './Fieldset';
 
 export default {
   title: 'Forms / Fieldset',

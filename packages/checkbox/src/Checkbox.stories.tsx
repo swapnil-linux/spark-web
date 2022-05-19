@@ -5,7 +5,7 @@ import { Stack } from '@spark-web/stack';
 import { Text } from '@spark-web/text';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Checkbox } from './checkbox';
+import { Checkbox } from './Checkbox';
 import type { CheckboxProps } from './types';
 
 export default {

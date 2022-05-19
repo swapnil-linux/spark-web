@@ -1,4 +1,4 @@
-export { Dropzone } from './dropzone';
+export { Dropzone } from './Drop-Zone';
 
 // types
-export type { DropzoneProps } from './dropzone';
+export type { DropzoneProps } from './Drop-Zone';

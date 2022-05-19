@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { useFieldIds } from '@spark-web/field';
 import { cleanup, render, screen } from '@testing-library/react';
 
-import { Checkbox } from './checkbox';
+import { Checkbox } from './Checkbox';
 
 jest.mock('@spark-web/field', () => {
   const original = jest.requireActual('@spark-web/field');

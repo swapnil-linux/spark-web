@@ -1,5 +1,5 @@
-export { Fieldset } from './fieldset';
+export { Fieldset } from './Fieldset';
 
 // types
 
-export type { FieldsetProps } from './fieldset';
+export type { FieldsetProps } from './Fieldset';

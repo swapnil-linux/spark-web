@@ -17,7 +17,10 @@ export type IconProps = {
 
 export const createIcon = (children: ReactNode, name: string) => {
   const Icon = forwardRef<SVGSVGElement, IconProps>(
-    ({ size: sizeKey = 'small', tone = 'neutral' }, forwardedRef) => {
+    (
+      { size: sizeKey = 'small', tone = 'neutral' }: IconProps,
+      forwardedRef
+    ) => {
       const {
         sizing,
         utils: { resolveResponsiveProps },

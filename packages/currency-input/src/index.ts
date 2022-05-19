@@ -1,5 +1,5 @@
-export { CurrencyInput } from './CurrencyInput';
+export { CurrencyInput } from './Currency-Input';
 
 // types
 
-export type { CurrencyInputProps } from './CurrencyInput';
+export type { CurrencyInputProps } from './Currency-Input';

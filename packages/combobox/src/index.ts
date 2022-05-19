@@ -1,5 +1,5 @@
-export { Combobox } from './combobox';
+export { Combobox } from './Combobox';
 
 // types
 
-export type { ComboboxProps } from './combobox';
+export type { ComboboxProps } from './Combobox';
