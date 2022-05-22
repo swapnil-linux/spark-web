@@ -43,12 +43,12 @@ export type ColumnsProps = {
 
 export const Columns = forwardRefWithAs<'div', ColumnsProps>(
   (
-    { alignY = 'top', collapseBelow, data, gap, template, children },
+    { alignY = 'top', collapseBelow, data, gap, template, ...props },
     forwardedRef
   ) => {
     const { spacing, utils } = useTheme();
     const alignItems = alignYToAlignItems(alignY);
-    const count = Children.count(children);
+    const count = Children.count(props.children);
     const gridTemplateColumns = template
       ? template.map(c => `${c}fr`).join(' ')
       : `repeat(${count}, 1fr)`;
@@ -82,9 +82,8 @@ export const Columns = forwardRefWithAs<'div', ColumnsProps>(
           })
         )}
         data={data}
-      >
-        {children}
-      </Box>
+        {...props}
+      />
     );
   }
 );
