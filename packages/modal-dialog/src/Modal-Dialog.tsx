@@ -221,7 +221,8 @@ function DialogClose(props: DialogCloseProps) {
 
 // Dialog Close Button
 // ------------------------------
-export function DialogCloseButton(props: DialogCloseProps): JSX.Element {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function DialogCloseButton(props: DialogCloseProps): JSX.Element {
   return <DialogPrimitive.Close {...props} />;
 }
 

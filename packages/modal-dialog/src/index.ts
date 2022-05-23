@@ -1,5 +1,5 @@
-export { ContentDialog, DialogCloseButton } from './content-dialog';
+export { ContentDialog } from './Modal-Dialog';
 
 // types
 
-export type { ContentDialogProps } from './content-dialog';
+export type { ContentDialogProps } from './Modal-Dialog';
