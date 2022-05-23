@@ -1,8 +1,8 @@
 import { Text } from '@spark-web/text';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import type { TextListProps } from './TextList';
-import { TextList } from './TextList';
+import type { TextListProps } from './Text-List';
+import { TextList } from './Text-List';
 
 export default {
   title: 'Data Display / TextList',

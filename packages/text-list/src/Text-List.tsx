@@ -10,10 +10,11 @@ import {
   useDefaultTextProps,
   useForegroundTone,
 } from '@spark-web/text';
-import { useTheme } from '@spark-web/theme';
 import type { DataAttributeMap } from '@spark-web/utils/internal';
 import type { ReactElement, ReactNode } from 'react';
 import { Children, forwardRef } from 'react';
+
+import { IndicatorContainer } from './IndicatorContainer';
 
 export const BULLET_ELEMENT_ID = 'text-list-bullet';
 export const NUMBER_ELEMENT_ID = 'text-list-number';
@@ -120,30 +121,6 @@ const bulletSize = {
   standard: 5,
   large: 5,
 } as const;
-
-export const IndicatorContainer = ({
-  size = 'standard',
-  ...props
-}: TextProps) => {
-  const { typography, utils } = useTheme();
-  const { mobile, tablet } = typography.text[size];
-  const responsiveStyles = utils.responsiveStyles({
-    mobile: { height: mobile.capHeight },
-    tablet: { height: tablet.capHeight },
-  });
-
-  return (
-    <Box
-      display="flex"
-      alignItems="center"
-      aria-hidden
-      cursor="default"
-      flexShrink={0}
-      className={css(responsiveStyles)}
-      {...props}
-    />
-  );
-};
 
 const Bullet = ({ size = 'standard', tone = 'neutral' }: TextProps) => {
   const backgroundColor = useForegroundTone(tone);
