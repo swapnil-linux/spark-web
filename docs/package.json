@@ -88,6 +88,7 @@
     "remark-gfm": "^3.0.1",
     "remark-mdx": "^2.1.1",
     "strip-markdown": "^5.0.0",
-    "typescript": "^4.6.4"
+    "typescript": "^4.6.4",
+    "webpack": "^5.26.0"
   }
 }
