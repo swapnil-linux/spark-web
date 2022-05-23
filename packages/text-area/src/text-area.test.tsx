@@ -5,7 +5,7 @@ import { Field } from '@spark-web/field';
 import { render, screen } from '@testing-library/react';
 
 import type { TextAreaProps } from '.';
-import { TextArea } from './text-area';
+import { TextArea } from './Text-Area';
 
 const renderComponent = (
   fieldProps: Omit<FieldProps, 'children'>,

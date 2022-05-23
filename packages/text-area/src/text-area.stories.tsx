@@ -1,8 +1,8 @@
 import { Field } from '@spark-web/field';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import type { TextAreaProps } from './text-area';
-import { TextArea } from './text-area';
+import type { TextAreaProps } from './Text-Area';
+import { TextArea } from './Text-Area';
 
 export default {
   title: 'Forms / TextArea',

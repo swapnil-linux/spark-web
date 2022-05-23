@@ -1,7 +1,7 @@
 import { cleanup, render } from '@testing-library/react';
 
-import type { NavLinkProps } from './nav-link';
-import { NavLink } from './nav-link';
+import type { NavLinkProps } from './Nav-Link';
+import { NavLink } from './Nav-Link';
 
 describe('Inline component', () => {
   afterEach(cleanup);

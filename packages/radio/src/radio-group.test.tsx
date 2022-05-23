@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { useState } from 'react';
 
-import { Radio } from './radio';
+import { Radio } from './Radio';
 import { RadioGroup } from './radio-group';
 
 const RadioGroupMock = ({

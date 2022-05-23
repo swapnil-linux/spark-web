@@ -1,5 +1,5 @@
-export { NavLink } from './nav-link';
+export { NavLink } from './Nav-Link';
 
 // types
 
-export type { NavLinkProps } from './nav-link';
+export type { NavLinkProps } from './Nav-Link';

@@ -4,7 +4,7 @@ import type { DataAttributeMap } from '@spark-web/utils/internal';
 import { render, screen } from '@testing-library/react';
 
 import { useRadioGroupContext } from './context';
-import { Radio } from './radio';
+import { Radio } from './Radio';
 import type { RadioSize } from './types';
 
 jest.mock('./context', () => {

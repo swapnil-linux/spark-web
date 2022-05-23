@@ -5,8 +5,8 @@ import { Stack } from '@spark-web/stack';
 import { Text } from '@spark-web/text';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import type { TextInputProps } from './TextInput';
-import { TextInput } from './TextInput';
+import type { TextInputProps } from './Text-Input';
+import { TextInput } from './Text-Input';
 
 export default {
   title: 'Forms / TextInput',

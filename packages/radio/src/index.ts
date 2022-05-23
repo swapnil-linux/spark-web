@@ -1,4 +1,4 @@
-export { Radio } from './radio';
+export { Radio } from './Radio';
 export { RadioGroup } from './radio-group';
 export { RadioPrimitive } from './radio-primitive';
 
