@@ -1,4 +1,5 @@
-export { IndicatorContainer, TextList } from './Text-List';
+export { IndicatorContainer } from './IndicatorContainer';
+export { TextList } from './Text-List';
 
 // types
 
