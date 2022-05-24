@@ -7,6 +7,7 @@ import { buildDataAttributes } from '@spark-web/utils/internal';
 import type { ReactElement, ReactNode } from 'react';
 import { forwardRef, Fragment } from 'react';
 
+import type { FieldContextType } from './context';
 import { FieldContextProvider } from './context';
 import { FieldMessage } from './Field-Message';
 
@@ -76,15 +77,18 @@ export const Field = forwardRef<HTMLDivElement, FieldProps>(
     const { descriptionId, inputId, messageId } = useFieldIds(idProp);
 
     // field context
-    const fieldContext = {
-      'aria-describedby': mergeIds(
-        message && messageId,
-        description && descriptionId
-      ),
-      id: inputId,
-      disabled,
-      invalid: Boolean(message && tone === 'critical'),
-    };
+    const invalid = Boolean(message && tone === 'critical');
+    const fieldContext: FieldContextType = [
+      { disabled, invalid },
+      {
+        'aria-describedby': mergeIds(
+          message && messageId,
+          description && descriptionId
+        ),
+        'aria-invalid': invalid || undefined,
+        id: inputId,
+      },
+    ];
 
     // label prep
     const hiddenLabel = (
@@ -96,14 +100,14 @@ export const Field = forwardRef<HTMLDivElement, FieldProps>(
       hidden: hiddenLabel,
       visible: (
         <Box as="label" htmlFor={inputId}>
-          <Text
-            inline
-            tone={disabled ? 'disabled' : 'neutral'}
-            weight="semibold"
-          >
+          <Text tone={disabled ? 'disabled' : 'neutral'} weight="semibold">
             {label}{' '}
             {secondaryLabel && (
-              <Text inline tone={disabled ? 'disabled' : 'muted'}>
+              <Text
+                inline
+                tone={disabled ? 'disabled' : 'muted'}
+                weight="regular"
+              >
                 {secondaryLabel}
               </Text>
             )}
@@ -113,9 +117,7 @@ export const Field = forwardRef<HTMLDivElement, FieldProps>(
       'reserve-space': (
         <Fragment>
           {hiddenLabel}
-          <Text inline aria-hidden>
-            &nbsp;
-          </Text>
+          <Text aria-hidden>&nbsp;</Text>
         </Fragment>
       ),
     };
@@ -123,7 +125,7 @@ export const Field = forwardRef<HTMLDivElement, FieldProps>(
     return (
       <FieldContextProvider value={fieldContext}>
         <Stack
-          gap={labelVisibility === 'hidden' ? undefined : 'small'}
+          gap={labelVisibility === 'hidden' ? undefined : 'medium'}
           ref={forwardedRef}
           {...(data ? buildDataAttributes(data) : null)}
         >

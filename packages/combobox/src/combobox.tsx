@@ -14,27 +14,37 @@ type Nullable<T> = T | null;
 type Awaitable<T> = T | Promise<T>;
 
 export type ComboboxProps<Item = unknown> = {
-  /** The text that appears in the form control when it has no value set. */
-  placeholder?: string;
-  /** The value of the input. */
-  inputValue?: string;
-  /** Array of items for the user to select from. */
-  items: Awaitable<Item[]>;
-  /** Called when an item is selected. */
-  onChange?: (value: Nullable<Item>) => void;
-  /** Called whenever the input value changes. Use to filter the items. */
-  onInputChange?: (inputValue: string) => void;
-  /** The selected item. */
-  value?: Nullable<Item>;
   /**
-   * Resolves option data to a string to be displayed as the label by components
+   * Resolves option data to a string to be displayed as the label by components.
    *
    * Note: Failure to resolve to a string type can interfere with filtering and
    * screen reader support.
    */
   getOptionLabel?: GetOptionLabel<Item>;
-  /** Resolves option data to a string to compare options and specify value attributes */
+
+  /** Resolves option data to a string to compare options and specify value attributes. */
   getOptionValue?: GetOptionValue<Item>;
+
+  /** The value of the input. */
+  inputValue?: string;
+
+  /** Array of items for the user to select from. */
+  items: Awaitable<Item[]>;
+
+  /** When true, shows a loading indicator in the dropdown instead of results. */
+  isLoading?: boolean;
+
+  /** Called when an item is selected. */
+  onChange?: (value: Nullable<Item>) => void;
+
+  /** Called whenever the input value changes. Use to filter the items. */
+  onInputChange?: (inputValue: string) => void;
+
+  /** The text that appears in the form control when it has no value set. */
+  placeholder?: string;
+
+  /** The selected item. */
+  value?: Nullable<Item>;
 };
 
 const isBrowser = typeof window !== 'undefined';
@@ -66,14 +76,11 @@ export const Combobox = <Item,>({
   onInputChange,
   getOptionLabel,
   getOptionValue,
+  isLoading,
   value,
 }: ComboboxProps<Item>) => {
-  const {
-    disabled,
-    invalid,
-    id: inputId,
-    'aria-describedby': ariaDescribedBy,
-  } = useFieldContext();
+  const [{ disabled, invalid }, { id: inputId, ...a11yProps }] =
+    useFieldContext();
 
   const stylesOverride = useReactSelectStylesOverride<Item>({ invalid });
   const themeOverride = useReactSelectThemeOverride();
@@ -82,8 +89,7 @@ export const Combobox = <Item,>({
 
   return (
     <ReactSelect<Item>
-      aria-describedby={ariaDescribedBy}
-      aria-invalid={invalid || undefined}
+      {...a11yProps}
       components={reactSelectComponentsOverride}
       inputId={inputId}
       inputValue={inputValue}
@@ -93,7 +99,7 @@ export const Combobox = <Item,>({
       value={value}
       options={items}
       isDisabled={disabled}
-      isLoading={loading}
+      isLoading={isLoading ?? loading}
       placeholder={placeholder}
       theme={themeOverride}
       menuPortalTarget={isBrowser ? document.body : undefined}
