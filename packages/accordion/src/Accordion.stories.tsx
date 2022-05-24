@@ -2,7 +2,8 @@ import { Text } from '@spark-web/text';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import type { AccordionProps } from './Accordion';
-import { Accordion, AccordionItem } from './Accordion';
+import { Accordion } from './Accordion';
+import { AccordionItem } from './Accordion-Item';
 
 export default {
   title: 'Data Display / Accordion',
