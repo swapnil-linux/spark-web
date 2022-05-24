@@ -13,7 +13,7 @@ import { IconButton } from './IconButton';
 export type PasswordInputProps = Omit<TextInputProps, 'children' | 'inputMode'>;
 
 export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
-  (props, forwardedRef) => {
+  (props: PasswordInputProps, forwardedRef) => {
     const [{ disabled }] = useFieldContext();
     const [showPassword, setShowPassword] = useState(false);
 

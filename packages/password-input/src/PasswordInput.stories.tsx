@@ -5,8 +5,8 @@ import { Stack } from '@spark-web/stack';
 import { Text } from '@spark-web/text';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import type { PasswordInputProps } from './PasswordInput';
-import { PasswordInput } from './PasswordInput';
+import type { PasswordInputProps } from './Password-Input';
+import { PasswordInput } from './Password-Input';
 
 export default {
   title: 'Forms / TextInput',
