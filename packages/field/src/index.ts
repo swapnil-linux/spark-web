@@ -1,6 +1,6 @@
 export { FieldContextProvider, useFieldContext } from './context';
 export { Field, useFieldIds } from './Field';
-export { FieldMessage } from './FieldMessage';
+export { FieldMessage } from './Field-Message';
 // types
 
 export type { FieldContextType } from './context';

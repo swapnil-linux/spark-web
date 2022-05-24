@@ -8,7 +8,7 @@ import type { ReactElement, ReactNode } from 'react';
 import { forwardRef, Fragment } from 'react';
 
 import { FieldContextProvider } from './context';
-import { FieldMessage } from './FieldMessage';
+import { FieldMessage } from './Field-Message';
 
 export type Tone = keyof typeof messageToneMap;
 
