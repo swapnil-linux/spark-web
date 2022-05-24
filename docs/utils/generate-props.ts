@@ -38,7 +38,8 @@ type CompoenentPackageType = {
   pkgTitle: string;
 };
 
-/** some packages have multiple components, due to
+/**
+ * some packages have multiple components, due to
  * react-docgen only can process each component from
  * its seperate file
  * For Xxaple: packages/text-input has Text-Link.tsx
