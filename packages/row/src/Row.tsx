@@ -12,7 +12,14 @@ import { alignToJustifyContent, alignYToAlignItems } from './alignment';
 
 type ValidBoxProps = Omit<
   BoxProps,
-  'display' | 'alignItems' | 'flexDirection' | 'justifyContent' | 'flexWrap'
+  | 'display'
+  | 'alignItems'
+  | 'flexDirection'
+  | 'justifyContent'
+  | 'flexWrap'
+  | 'className'
+  | 'style'
+  | 'dangerouslySetInnerHTML'
 >;
 
 export type RowProps = {
