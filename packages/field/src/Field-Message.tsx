@@ -6,17 +6,7 @@ import { useTheme } from '@spark-web/theme';
 import type { ReactNode } from 'react';
 
 import type { FieldProps } from './Field';
-
-export type Tone = keyof typeof messageToneMap;
-
-// Styled components
-// ------------------------------
-
-const messageToneMap = {
-  critical: 'critical',
-  neutral: 'muted',
-  positive: 'positive',
-} as const;
+import { messageToneMap } from './Field';
 
 // NOTE: use icons in addition to color for folks with visions issues
 const messageIconMap = {

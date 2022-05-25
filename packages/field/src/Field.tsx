@@ -11,6 +11,14 @@ import { FieldContextProvider } from './context';
 import { FieldLabelWrapper } from './Field-Label-Wrapper';
 import { FieldMessage } from './Field-Message';
 
+export const messageToneMap = {
+  critical: 'critical',
+  neutral: 'muted',
+  positive: 'positive',
+} as const;
+
+export type Tone = keyof typeof messageToneMap;
+
 export type FieldProps = {
   id?: string;
   data?: DataAttributeMap;
