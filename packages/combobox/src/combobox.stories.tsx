@@ -2,7 +2,7 @@ import { Field } from '@spark-web/field';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { useState } from 'react';
 
-import { Combobox } from './combobox';
+import { Combobox } from './Combobox';
 
 export default {
   title: 'Forms / Combobox',
@@ -24,7 +24,7 @@ const ComboboxStory: ComponentStory<typeof Combobox> = () => {
       <Combobox
         placeholder="Select a character"
         items={items}
-        onChange={value => setValue(value)}
+        onChange={(value: any) => setValue(value)}
         value={value}
       />
     </Field>
