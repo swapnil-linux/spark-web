@@ -17,6 +17,13 @@ export const reactSelectComponentsOverride: SelectComponentsConfig<
   false,
   GroupBase<any>
 > = {
+  Input: props => (
+    <components.Input
+      {...props}
+      aria-invalid={props.selectProps['aria-invalid']}
+      aria-describedby={props.selectProps['aria-labelledby']}
+    />
+  ),
   DropdownIndicator: props => (
     <components.DropdownIndicator {...props}>
       <ChevronDownIcon size="xxsmall" tone="muted" />

@@ -90,6 +90,7 @@ export const Combobox = <Item,>({
   return (
     <ReactSelect<Item>
       {...a11yProps}
+      aria-labelledby={a11yProps['aria-describedby']}
       components={reactSelectComponentsOverride}
       inputId={inputId}
       inputValue={inputValue}
