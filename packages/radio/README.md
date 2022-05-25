@@ -13,13 +13,13 @@ In order to toggle between options, all Radio components should have a matching
 
 ```jsx live
 <Stack gap="large">
-  <Radio name="character" value="Shrek">
+  <Radio name="character-radio" value="Shrek">
     Shrek
   </Radio>
-  <Radio name="character" value="Fiona">
+  <Radio name="character-radio" value="Fiona">
     Fiona
   </Radio>
-  <Radio name="character" value="Donkey">
+  <Radio name="character-radio" value="Donkey">
     Donkey
   </Radio>
 </Stack>
@@ -129,6 +129,51 @@ return (
     </RadioGroup>
   </Stack>
 );
+```
+
+## RadioCard
+
+### Controlled
+
+```jsx live
+const [selected, setSelected] = React.useState('Shrek');
+
+return (
+  <Stack gap="large">
+    <RadioGroup value={selected} onChange={setSelected}>
+      <RadioCard value="Shrek" description="Ogre">
+        Shrek
+      </RadioCard>
+      <RadioCard value="Fiona" description="Princess">
+        Fiona
+      </RadioCard>
+      <RadioCard value="Donkey" description="Donkey">
+        Donkey
+      </RadioCard>
+    </RadioGroup>
+    {selected && (
+      <Text>
+        The selected character is <Strong>{selected}</Strong>
+      </Text>
+    )}
+  </Stack>
+);
+```
+
+### Uncontrolled
+
+```jsx live
+<Stack gap="large">
+  <RadioCard description="Ogre" name="character-radio-card">
+    Shrek
+  </RadioCard>
+  <RadioCard description="Princess" name="character-radio-card">
+    Fiona
+  </RadioCard>
+  <RadioCard description="Donkey" name="character-radio-card">
+    Donkey
+  </RadioCard>
+</Stack>
 ```
 
 ## Props
