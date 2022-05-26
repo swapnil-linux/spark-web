@@ -133,13 +133,17 @@ return (
 
 ## RadioCard
 
+A RadioCard is an alternative to Radio. Use RadioCard where a user needs to make
+one selection out of several choices, and where each option requires some
+detailed information.
+
 ### Controlled
 
 ```jsx live
 const [selected, setSelected] = React.useState('Shrek');
 
 return (
-  <Stack gap="large">
+  <Fieldset legend="Shrek Characters" gap="large">
     <RadioGroup value={selected} onChange={setSelected}>
       <RadioCard value="Shrek" description="Ogre">
         Shrek
@@ -156,24 +160,49 @@ return (
         The selected character is <Strong>{selected}</Strong>
       </Text>
     )}
-  </Stack>
+  </Fieldset>
 );
 ```
 
 ### Uncontrolled
 
 ```jsx live
-<Stack gap="large">
-  <RadioCard description="Ogre" name="character-radio-card">
+<Fieldset legend="Shrek Characters" gap="large">
     Shrek
   </RadioCard>
-  <RadioCard description="Princess" name="character-radio-card">
+  <RadioCard
+    description="Princess"
+    name="character-radio-card"
+  >
     Fiona
   </RadioCard>
   <RadioCard description="Donkey" name="character-radio-card">
     Donkey
   </RadioCard>
-</Stack>
+</Fieldset>
+```
+
+### Without description
+
+RadioCards without a description have a lower prominence label.
+
+```jsx live
+const [selected, setSelected] = React.useState('Shrek');
+
+return (
+  <Fieldset legend="Shrek Characters" gap="medium">
+    <RadioGroup value={selected} onChange={setSelected}>
+      <RadioCard value="Shrek">Shrek</RadioCard>
+      <RadioCard value="Fiona">Fiona</RadioCard>
+      <RadioCard value="Donkey">Donkey</RadioCard>
+    </RadioGroup>
+    {selected && (
+      <Text>
+        The selected character is <Strong>{selected}</Strong>
+      </Text>
+    )}
+  </Fieldset>
+);
 ```
 
 ## Props
@@ -196,10 +225,10 @@ listed here.
 | Prop      | Type                                   | Default | Description                            |
 | --------- | -------------------------------------- | ------- | -------------------------------------- |
 | checked?  | boolean                                |         | When true, the radio will be checked.  |
+| data?     | [DataAttributeMap][data-attribute-map] |         | Sets data attributes on the component. |
 | disabled? | boolean                                |         | When true, the radio will be disabled. |
 | size?     | 'small' \| 'medium'                    | 'small' | The size of the radio.                 |
 | value?    | string                                 |         | The value of the radio.                |
-| data?     | [DataAttributeMap][data-attribute-map] |         | Sets data attributes on the component. |
 
 [data-attribute-map]:
   https://github.com/brighte-labs/spark-web/blob/e7f6f4285b4cfd876312cc89fbdd094039aa239a/packages/utils/src/internal/buildDataAttributes.ts#L1
@@ -211,9 +240,22 @@ are not listed here.
 
 | Prop      | Type                                     | Default   | Description                                                               |
 | --------- | ---------------------------------------- | --------- | ------------------------------------------------------------------------- |
-| onChange  | onChange: (selectedValue: Value) => void |           | Function that is fired whenever a change event is triggered on a `Radio`. |
-| value     | string                                   |           | The value of the nested radios.                                           |
 | disabled? | boolean                                  |           | When true, disables the group of nested radios.                           |
-| size?     | 'small' \| 'medium'                      |           | The size of the nested radios.                                            |
 | message?  | string                                   |           | Provide a message, informing the user about changes in state.             |
+| onChange  | onChange: (selectedValue: Value) => void |           | Function that is fired whenever a change event is triggered on a `Radio`. |
+| size?     | 'small' \| 'medium'                      |           | The size of the nested radios.                                            |
 | tone?     | 'critical' \| 'positive' \| 'neutral'    | 'neutral' | Provide a tone to influence elements of the field, and its input.         |
+| value     | string                                   |           | The value of the nested radios.                                           |
+
+### RadioCard
+
+| Prop         | Type            | Default | Description                            |
+| ------------ | --------------- | ------- | -------------------------------------- |
+| checked?     | boolean         |         | When true, the radio will be checked.  |
+| children     | React.ReactNode |         | The radio label.                       |
+| description? | string          |         | The radio description.                 |
+| disabled?    | boolean         | false   | When true, the radio will be disabled. |
+| value?       | string          |         | The value of the radio.                |
+
+The `RadioCard` component also extends `InputHTMLAttributes` props and are not
+listed here.
