@@ -12,7 +12,7 @@ In order to toggle between options, all Radio components should have a matching
 `name` prop (unless you are using them inside of a `RadioGroup`).
 
 ```jsx live
-<Stack gap="large">
+<Fieldset legend="Shrek Characters" gap="large">
   <Radio name="character-radio" value="Shrek">
     Shrek
   </Radio>
@@ -22,7 +22,7 @@ In order to toggle between options, all Radio components should have a matching
   <Radio name="character-radio" value="Donkey">
     Donkey
   </Radio>
-</Stack>
+</Fieldset>
 ```
 
 ### Size
@@ -63,7 +63,9 @@ Radio buttons are available in two sizes: `small` and `medium`.
 
 The `RadioGroup` can be used to control a group of `Radio` components. The
 `RadioGroup` handles the `value`, `tone`, `message`, and `disabled` state of
-it's children.
+it's children. Internally the `RadioGroup` contains a
+[`Fieldset`](/components/fieldset) so the `legend` prop is required when using
+this component.
 
 ### Controlled
 
@@ -77,7 +79,12 @@ const [selected, setSelected] = React.useState('Shrek');
 
 return (
   <Stack gap="large">
-    <RadioGroup value={selected} onChange={setSelected}>
+    <RadioGroup
+      legend="Shrek Characters"
+      value={selected}
+      onChange={setSelected}
+      gap="large"
+    >
       <Radio value="Shrek">Shrek</Radio>
       <Radio value="Fiona">Fiona</Radio>
       <Radio value="Donkey">Donkey</Radio>
@@ -118,6 +125,7 @@ const statuses = {
 return (
   <Stack gap="large">
     <RadioGroup
+      legend="Message and Tone"
       message={statuses[selected]?.message}
       tone={statuses[selected]?.tone}
       value={selected}
@@ -144,19 +152,23 @@ const [selected, setSelected] = React.useState('Shrek');
 
 return (
   <Stack gap="large">
-    <Fieldset legend="Shrek Characters" gap="large">
-      <RadioGroup value={selected} onChange={setSelected}>
-        <RadioCard value="Shrek" description="Ogre">
-          Shrek
-        </RadioCard>
-        <RadioCard value="Fiona" description="Princess">
-          Fiona
-        </RadioCard>
-        <RadioCard value="Donkey" description="Donkey">
-          Donkey
-        </RadioCard>
-      </RadioGroup>
-    </Fieldset>
+    <RadioGroup
+      legend="Shrek Characters"
+      value={selected}
+      onChange={setSelected}
+      gap="large"
+    >
+      <RadioCard value="Shrek" description="Ogre">
+        Shrek
+      </RadioCard>
+      <RadioCard value="Fiona" description="Princess">
+        Fiona
+      </RadioCard>
+      <RadioCard value="Donkey" description="Donkey">
+        Donkey
+      </RadioCard>
+    </RadioGroup>
+
     {selected && (
       <Text>
         The selected character is <Strong>{selected}</Strong>
@@ -190,8 +202,13 @@ RadioCards without a description have a lower prominence label.
 const [selected, setSelected] = React.useState('Shrek');
 
 return (
-  <Fieldset legend="Shrek Characters" gap="medium">
-    <RadioGroup value={selected} onChange={setSelected}>
+  <Stack gap="large">
+    <RadioGroup
+      legend="Shrek Characters"
+      value={selected}
+      onChange={setSelected}
+      gap="large"
+    >
       <RadioCard value="Shrek">Shrek</RadioCard>
       <RadioCard value="Fiona">Fiona</RadioCard>
       <RadioCard value="Donkey">Donkey</RadioCard>
@@ -201,7 +218,7 @@ return (
         The selected character is <Strong>{selected}</Strong>
       </Text>
     )}
-  </Fieldset>
+  </Stack>
 );
 ```
 
@@ -238,14 +255,16 @@ are not listed here.
 
 ### RadioGroup
 
-| Prop      | Type                                     | Default   | Description                                                               |
-| --------- | ---------------------------------------- | --------- | ------------------------------------------------------------------------- |
-| disabled? | boolean                                  |           | When true, disables the group of nested radios.                           |
-| message?  | string                                   |           | Provide a message, informing the user about changes in state.             |
-| onChange  | onChange: (selectedValue: Value) => void |           | Function that is fired whenever a change event is triggered on a `Radio`. |
-| size?     | 'small' \| 'medium'                      |           | The size of the nested radios.                                            |
-| tone?     | 'critical' \| 'positive' \| 'neutral'    | 'neutral' | Provide a tone to influence elements of the field, and its input.         |
-| value     | string                                   |           | The value of the nested radios.                                           |
+| Prop      | Type                                                                             | Default   | Description                                                               |
+| --------- | -------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------- |
+| disabled? | boolean                                                                          |           | When true, disables the group of nested radios.                           |
+| gap?      | 'xxsmall' \| 'xsmall' \| 'small' \| 'medium' \| 'large' \| 'xlarge' \| 'xxlarge' | 'large'   | Vertical spacing between children.                                        |
+| legend    | string                                                                           |           | Provide a caption that describes the set of form fields.                  |
+| message?  | string                                                                           |           | Provide a message, informing the user about changes in state.             |
+| onChange  | onChange: (selectedValue: Value) => void                                         |           | Function that is fired whenever a change event is triggered on a `Radio`. |
+| size?     | 'small' \| 'medium'                                                              |           | The size of the nested radios.                                            |
+| tone?     | 'critical' \| 'positive' \| 'neutral'                                            | 'neutral' | Provide a tone to influence elements of the field, and its input.         |
+| value     | string                                                                           |           | The value of the nested radios.                                           |
 
 ### RadioCard
 
