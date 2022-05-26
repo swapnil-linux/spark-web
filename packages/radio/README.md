@@ -143,24 +143,26 @@ detailed information.
 const [selected, setSelected] = React.useState('Shrek');
 
 return (
-  <Fieldset legend="Shrek Characters" gap="large">
-    <RadioGroup value={selected} onChange={setSelected}>
-      <RadioCard value="Shrek" description="Ogre">
-        Shrek
-      </RadioCard>
-      <RadioCard value="Fiona" description="Princess">
-        Fiona
-      </RadioCard>
-      <RadioCard value="Donkey" description="Donkey">
-        Donkey
-      </RadioCard>
-    </RadioGroup>
+  <Stack gap="large">
+    <Fieldset legend="Shrek Characters" gap="large">
+      <RadioGroup value={selected} onChange={setSelected}>
+        <RadioCard value="Shrek" description="Ogre">
+          Shrek
+        </RadioCard>
+        <RadioCard value="Fiona" description="Princess">
+          Fiona
+        </RadioCard>
+        <RadioCard value="Donkey" description="Donkey">
+          Donkey
+        </RadioCard>
+      </RadioGroup>
+    </Fieldset>
     {selected && (
       <Text>
         The selected character is <Strong>{selected}</Strong>
       </Text>
     )}
-  </Fieldset>
+  </Stack>
 );
 ```
 
