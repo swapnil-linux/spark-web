@@ -33,7 +33,7 @@ const docgen = require('react-docgen-typescript').withCompilerOptions(
 
 // const resolvedPath = path.resolve('../../packages/divider/src/Divider.tsx');
 // const resolvedPath = path.resolve('../../packages/box/src/Box.tsx');
-const resolvedPath = path.resolve('../../packages/button/src/index.ts');
+const resolvedPath = path.resolve('../../packages/button/src/Button.tsx');
 // const resolvedPath = path.resolve('../../packages/accordion/src/Accordion.tsx');
 // Parse a file for docgen info
 console.log(JSON.stringify(docgen.parse(resolvedPath), null, 2));
