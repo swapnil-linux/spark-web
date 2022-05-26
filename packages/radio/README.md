@@ -168,12 +168,10 @@ return (
 
 ```jsx live
 <Fieldset legend="Shrek Characters" gap="large">
+  <RadioCard description="Ogre" name="character-radio-card">
     Shrek
   </RadioCard>
-  <RadioCard
-    description="Princess"
-    name="character-radio-card"
-  >
+  <RadioCard description="Princess" name="character-radio-card">
     Fiona
   </RadioCard>
   <RadioCard description="Donkey" name="character-radio-card">
