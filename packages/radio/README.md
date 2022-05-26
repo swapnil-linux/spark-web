@@ -148,30 +148,35 @@ detailed information.
 ### Controlled
 
 ```jsx live
-const [selected, setSelected] = React.useState('Shrek');
+const [selected, setSelected] = React.useState('06_months');
 
 return (
   <Stack gap="large">
     <RadioGroup
-      legend="Shrek Characters"
+      legend="Select a repayment term"
       value={selected}
       onChange={setSelected}
-      gap="large"
     >
-      <RadioCard value="Shrek" description="Ogre">
-        Shrek
+      <RadioCard value="6 months" description="$426.08/fortnight">
+        6 months
       </RadioCard>
-      <RadioCard value="Fiona" description="Princess">
-        Fiona
+      <RadioCard value="12 months" description="$214.54/fortnight">
+        12 months
       </RadioCard>
-      <RadioCard value="Donkey" description="Donkey">
-        Donkey
+      <RadioCard value="24 months" description="$108.77/fortnight">
+        24 months
+      </RadioCard>
+      <RadioCard value="36 months" description="73.52/fortnight">
+        36 months
+      </RadioCard>
+      <RadioCard value="48 months" description="55.89/fortnight">
+        48 months
       </RadioCard>
     </RadioGroup>
 
     {selected && (
       <Text>
-        The selected character is <Strong>{selected}</Strong>
+        You have selected <Strong>{selected}</Strong>
       </Text>
     )}
   </Stack>
@@ -181,16 +186,12 @@ return (
 ### Uncontrolled
 
 ```jsx live
-<Fieldset legend="Shrek Characters" gap="large">
-  <RadioCard description="Ogre" name="character-radio-card">
-    Shrek
-  </RadioCard>
-  <RadioCard description="Princess" name="character-radio-card">
-    Fiona
-  </RadioCard>
-  <RadioCard description="Donkey" name="character-radio-card">
-    Donkey
-  </RadioCard>
+<Fieldset legend="Select a repayment term">
+  <RadioCard description="$426.08/fortnight">6 months</RadioCard>
+  <RadioCard description="$214.54/fortnight">12 months</RadioCard>
+  <RadioCard description="$108.77/fortnight">24 months</RadioCard>
+  <RadioCard description="73.52/fortnight">36 months</RadioCard>
+  <RadioCard description="55.89/fortnight">48 months</RadioCard>
 </Fieldset>
 ```
 
