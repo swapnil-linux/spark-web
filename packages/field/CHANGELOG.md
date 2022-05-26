@@ -1,5 +1,19 @@
 # @spark-web/field
 
+## 2.0.1
+
+### Patch Changes
+
+- [#128](https://github.com/brighte-labs/spark-web/pull/128)
+  [`2a1c354`](https://github.com/brighte-labs/spark-web/commit/2a1c3549e03f91d012906f90b13c1f8d7ba18d1e)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Fix collapsing
+  gap on stack that wraps label, description, input and message
+
+* [#123](https://github.com/brighte-labs/spark-web/pull/123)
+  [`d0ce080`](https://github.com/brighte-labs/spark-web/commit/d0ce08000f4c62d7402450b09f086d5806f1b50b)
+  Thanks [@lukebennett88](https://github.com/lukebennett88)! - Tighten up
+  spacing
+
 ## 2.0.0
 
 ### Major Changes

@@ -1,6 +1,6 @@
 {
   "name": "@spark-web/core",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "license": "MIT",
   "main": "dist/spark-web-core.cjs.js",
   "module": "dist/spark-web-core.esm.js",
